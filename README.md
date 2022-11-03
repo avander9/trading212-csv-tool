@@ -1,2 +1,4 @@
 # trading212-csv-tool
-trading212 CSV file parser tool
+
+Read exported csv files from Trading212 and upload the data to a cosmos db in Azure.
+
