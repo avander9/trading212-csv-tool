@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Trading212Tools.Extensions;
 using Trading212Tools.Models;
 
 namespace Trading212Tools.Services;
@@ -22,7 +23,7 @@ public class CSVParserService
                 .WithTime(DateTime.Parse(splitedLine[1]))
                 .WithIsin(splitedLine[2])
                 .WithTicker(splitedLine[3])
-                .WithName(splitedLine[4])
+                .WithName(splitedLine[4].Sanitize())
                 .WithNumberOfShares(float.Parse(splitedLine[5],  CultureInfo.InvariantCulture))
                 .WithPrice(ParseDecimal(splitedLine[6]))
                 .WithPriceCurrency(splitedLine[7])
